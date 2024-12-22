@@ -1,0 +1,40 @@
+.header {
+	background: $color_background_header;
+	@extend %max_wight;
+	> * {
+		display: flex;
+		align-items: center;
+		height: 72px;
+	}
+}
+.header__logo {
+	a {
+		display: block;
+		padding: 5px 0;
+	}
+	img {
+		display: block;
+		width: 110px;
+		height: 24px;
+	}
+}
+.header__right {
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 5px;
+	button,
+	a {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+	}
+	img {
+		display: block;
+		width: 24px;
+		height: 24px;
+	}
+}

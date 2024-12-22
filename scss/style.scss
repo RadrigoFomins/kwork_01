@@ -1,8 +1,11 @@
-$font_size_default: 18;
+$font_size_default: 14;
 
-$color_text: #0b1c39;
+$color_text: #1D1D1D;
+$color_border: #b6b6b6;
 $color_link: #0b1c39;
 $color_link_hover: #2572ff;
+
+$color_background_header: #404444;
 
 @function clm_rem($min, $width, $max) {
 	$min_rem: #{$min + rem};
@@ -19,11 +22,11 @@ $color_link_hover: #2572ff;
 }
 
 %max_wight {
-	padding-left: 5%;
-	padding-right: 5%;
+	padding-left: 4%;
+	padding-right: 4%;
 	> * {
 		width: 100%;
-		max-width: 900px;
+		max-width: 1290px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -36,3 +39,4 @@ $color_link_hover: #2572ff;
 @import "_header";
 @import "_main";
 @import "_footer";
+@import "_login";
