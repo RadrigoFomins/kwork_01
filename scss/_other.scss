@@ -13,7 +13,7 @@
 	padding: 15px;
 	font-size: clm_rem(0.71, 900, 1);
 }
-
+// Кнопки
 .btn {
 	border: 0 none;
 	cursor: pointer;
@@ -21,9 +21,29 @@
 	text-decoration: none !important;
 	background: transparent;
 }
+.btn-default,
+.btn-white {
+	text-transform: uppercase;
+	height: 46px;
+	border-radius: 23px;
+	line-height: 46px;
+	padding: 0 25px;
+	font-weight: 600;
+	border: 1px solid $color_text;
+}
+.btn-default {
+	background-color: $color_text;
+	color: #fff;
+}
+.btn-white {
+	background-color: #fff;
+	color: $color_text;
+}
+// Поля ввода
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="tel"] {
 	display: inline-block;
 	width: 100%;
 	padding: 0 10px;
@@ -33,4 +53,8 @@ input[type="email"] {
 	background-color: #fff;
 	font-size: 0.93rem;
 	border: 1px solid $color_border;
+}
+// tab
+.tab-pane:not(.show) {
+	display: none;
 }

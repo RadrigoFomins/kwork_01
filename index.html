@@ -5,7 +5,6 @@
 	<title>Название</title>
 	<meta name="description" content="Описание">
 	<meta name="keywords" content="Ключевые слова">
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=1">
 </head>
 <body>
@@ -41,27 +40,69 @@
 	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="loginModalLabel">Вход на сайт</h4>
-				</div>
-				<div class="modal-body">
-					<form method="post">
-						<div>
-							<label for="login_name">Введите ваш e-mail</label>
-							<input type="email" name="login_name" id="login_name">
+
+				<div class="login_tab_block">
+					<div class="tab-pane" id="login-reg" role="tabpanel" aria-labelledby="login-reg-tab">
+						<div class="modal-header">
+							<h4 class="modal-title h2" id="loginModalLabel">Регистрация</h4>
 						</div>
-						<div>
-							<label for="login_password">Введите ваш e-mail</label>
-							<input type="password" name="login_password" id="login_password">
+						<div class="modal-body">
+							<form method="post">
+								<div>
+									<label for="login_name">Введите ваш e-mail</label>
+									<input type="email" name="login_name" id="login_name">
+								</div>
+								<div>
+									<label for="login_tel">Введите ваш номер телефона</label>
+									<input type="tel" name="login_tel" id="login_tel">
+								</div>
+								<div>
+									<label for="login_password">Введите ваш пароль</label>
+									<input type="password" name="login_password" id="login_password">
+								</div>
+								<div><button class="btn btn-default" type="button" title="Войти">Зарегистрироваться</button></div>
+							</form>
 						</div>
-						<div><button class="btn" type="button" title="Войти">Войти</button></div>
-					</form>
+						</div>
+					<div class="tab-pane show" id="login-aut" role="tabpanel" aria-labelledby="login-aut-tab">
+						<div class="modal-header">
+							<h4 class="modal-title h2" id="loginModalLabel">Вход</h4>
+						</div>
+						<div class="modal-body">
+							<form method="post">
+								<div>
+									<label for="login_name">Введите ваш e-mail</label>
+									<input type="email" name="login_name" id="login_name">
+								</div>
+								<div>
+									<label for="login_tel">Или номер телефона</label>
+									<input type="tel" name="login_tel" id="login_tel">
+								</div>
+								<div>
+									<label for="login_password">Введите ваш пароль</label>
+									<input type="password" name="login_password" id="login_password">
+								</div>
+								<div><button class="btn btn-default" type="button" title="Войти">Войти</button></div>
+							</form>
+						</div>
+					</div>
 				</div>
+
+				<ul class="login_tab_button" role="tablist">
+					<li role="presentation">
+						<button id="login-reg-tab" class="btn btn-white" data-toggle="tab" type="button" role="tab" aria-controls="login-reg" aria-selected="false">Зарегистрироваться</button>
+					</li>
+					<li role="presentation">
+						<button id="login-aut-tab" class="btn btn-white" data-toggle="tab" type="button" role="tab" aria-controls="login-aut" aria-selected="true">Войти</button>
+					</li>
+				</ul>
+
+				<button type="button" class="btn close" aria-label="Close">
+					<img src="images/icons/close_black.svg" alt="">
+				</button>
 			</div>
-			<button type="button" class="btn close" aria-label="Close">Закрыть</button>
 		</div>
-	</div>
-	<script src="js/jquery-3.7.1.min.js"></script>
-	<script src="js/lib.js?v=1"></script>
+		<script src="js/jquery-3.7.1.min.js"></script>
+		<script src="js/lib.js?v=1"></script>
 </body>
 </html>

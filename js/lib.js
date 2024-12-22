@@ -3,7 +3,7 @@ $(document).ready(function () {
 	// Функция Фокуса в модальном окне
 	function trapFocus(boxModal) {
 		boxModal.on('keydown', function (e) {
-			var focusableElements = boxModal.find('a[href], button, textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
+			var focusableElements = boxModal.find('a[href], button, textarea, input, select');
 			var firstElement = focusableElements.first();
 			var lastElement = focusableElements.last();
 			if (e.key === 'Tab') {
@@ -80,5 +80,22 @@ $(document).ready(function () {
 		if (e.target == $('.modal')[0]) {
 			functionClose();
 		}
+	});
+});
+
+// tab
+$(document).ready(function () {
+	$('[data-toggle="tab"]').click(function () {
+		$('.tab-pane')
+			.removeClass('show')
+			.css('display', '');
+		$('[data-toggle="tab"]').attr('aria-selected', 'false');
+
+		$(this).attr('aria-selected', 'true');
+		var tabId = $(this).attr('aria-controls');
+		$('#' + tabId).fadeIn(300);
+		setTimeout(function () {
+			$('#' + tabId).addClass('show');
+		}, 150);
 	});
 });
