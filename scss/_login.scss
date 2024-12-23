@@ -5,42 +5,65 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 100%;
 	z-index: 1050;
 	overflow-x: hidden;
 	overflow-y: auto;
 	outline: 0;
+	width: 100%;
+	height: 100%;
 	&[aria-hidden="true"] {
 		display: none;
 	}
 }
-.modal-dialog {
-	background-color: #fff;
-	width: 100%;
-	position: relative;
-	.btn.close {
-		position: absolute;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		top: 5px;
-		right: 5px;
-		width: 50px;
-		height: 50px;
-		img {
-			display: block;
-			width: 16px;
-			height: 16px;
+
+#loginModal {
+	.modal-dialog {
+		background-color: #fff;
+		width: 100%;
+		position: relative;
+		.btn.close {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			top: 5px;
+			right: 5px;
+			width: 50px;
+			height: 50px;
+			img {
+				display: block;
+				width: 16px;
+				height: 16px;
+			}
+		}
+		*[aria-selected="true"] {
+			display: none;
+		}
+		.btn:not(.close) {
+			width: 100%;
+			margin-top: 10px;
+			text-align: center;
 		}
 	}
-	*[aria-selected="true"] {
-		display: none;
-	}
-	.btn {
-		width: 100%;
-		margin-top: 10px;
+
+	.modal-header {
+		margin-bottom: 15px;
 		text-align: center;
+	}
+
+	.modal-body {
+		form {
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+			> * {
+				width: 100%;
+				label {
+					display: block;
+					margin-bottom: 5px;
+				}
+			}
+		}
 	}
 }
 
@@ -52,45 +75,26 @@
 	height: 100vh;
 	z-index: 1040;
 	display: none;
-}
-.modal-header {
-	margin-bottom: 15px;
-	text-align: center;
-}
-.modal-body {
-	form {
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
-		> * {
-			width: 100%;
-			label {
-				display: block;
-				margin-bottom: 5px;
-			}
-		}
-	}
+	background-color: #000;
+	opacity: 0.26;
 }
 
 @media (max-width: 575.98px) {
-	.modal-dialog {
-		height: 100%;
-		padding: 30px;
-	}
-	.modal-backdrop {
-		background-color: #fff;
+	#loginModal {
+		.modal-dialog {
+			height: 100%;
+			padding: 30px;
+		}
 	}
 }
 @media (min-width: 576px) {
-	.modal-dialog {
-		max-width: 470px;
-		margin: 50px auto;
-		height: auto;
-		border: 1px solid rgba(0, 0, 0, 0.2);
-		padding: 40px;
-	}
-	.modal-backdrop {
-		background-color: #000;
-		opacity: 0.26;
+	#loginModal {
+		.modal-dialog {
+			max-width: 470px;
+			margin: 50px auto;
+			height: auto;
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			padding: 40px;
+		}
 	}
 }

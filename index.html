@@ -20,7 +20,7 @@
 		<div class="header__content">
 			<div>
 				<div class="header__btn-mob">
-					<button type="button" class="btn">
+					<button type="button" class="btn" data-toggle="modal" data-target="menuModal">
 						<img src="images/icons/menu_white.svg" alt="">
 					</button>
 				</div>
@@ -137,6 +137,12 @@
 			</div>
 		</div>
 	</div>
+	<nav class="modal fade" id="menuModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			</div>
+		</div>
+	</nav>
 	<script src="js/jquery-3.7.1.min.js"></script>
 	<script>
 		$(function () {

@@ -31,7 +31,8 @@ $(document).ready(function () {
 			.fadeOut(200)
 			.attr('aria-hidden', 'true')
 			.removeAttr('aria-modal')
-			.removeAttr('role');
+			.removeAttr('role')
+			.removeClass('show');
 
 		setTimeout(function () {
 			$('.modal-backdrop').fadeOut(200);
@@ -57,14 +58,16 @@ $(document).ready(function () {
 			.css('padding-right', scrollWidth)
 			.addClass('modal-open')
 			.append('<div class="modal-backdrop"></div>');
+			modalId
+				.css('padding-right', scrollWidth)
+				.fadeIn(200);
 		$('.modal-backdrop').fadeIn(200);
 		setTimeout(function () {
 			modalId
-				.css('padding-right', scrollWidth)
 				.removeAttr('aria-hidden')
 				.attr('aria-modal', 'true')
 				.attr('role', 'dialog')
-				.fadeIn(200)
+				.addClass('show')
 				.focus();
 			trapFocus(modalId);
 		}, 150);
@@ -77,10 +80,11 @@ $(document).ready(function () {
 		functionClose();
 	});
 	$(window).click(function (e) {
-		if (e.target == $('.modal')[0]) {
-			functionClose();
+		if ($('.modal').is(e.target)) { // Проверяем, является ли цель события элементом с классом modal
+		  functionClose();
 		}
-	});
+	 });
+	
 });
 
 // tab

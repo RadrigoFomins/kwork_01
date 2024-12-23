@@ -155,12 +155,19 @@
 }
 
 // Мобильное меню
-.menu-mob {
-	position: fixed;
-	top: 0;
-	height: 100%;
-	left: 0;
-	width: 160px;
-	background-color: #fff;
-	z-index: 900;
+#menuModal {
+	.modal-dialog {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 260px;
+		background-color: #fff;
+		transition: transform 0.3s ease;
+	}
+	&:not(.show) {
+		.modal-dialog {
+			transform: translateX(-100%);
+		}
+	}
 }
