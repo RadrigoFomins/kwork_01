@@ -99,3 +99,48 @@ $(document).ready(function () {
 		}, 150);
 	});
 });
+
+// Фокус в меню
+$(document).ready(function () {
+	document.addEventListener('keydown', function (e) {
+		let isTabPressed = (e.key == 'Tab' || e.keyCode == 9);
+		if (!isTabPressed) {
+			return;
+		}
+		if (e.shiftKey) {
+			$('.sub > a').blur(
+				function () {
+					$(this).parents('.sub').removeClass('focus-menu');
+				}
+			);
+			$('.sub .sub-link a.last').blur(
+				function () {
+					$(this).parents('.sub').addClass('focus-menu');
+				}
+			);
+		} else {
+			$('.sub > a').focus(
+				function () {
+					$(this).parents('.sub').addClass('focus-menu');
+				}
+			);
+			$('.sub > a').blur(
+				function () {
+					$(this).parents('.sub').addClass('focus-menu');
+				}
+			);
+			$('.sub-link a.last').blur(
+				function () {
+					$(this).parents('.sub').removeClass('focus-menu');
+				}
+			);
+		}
+	});
+	$(document).click(
+		function (e) {
+			if (!$('.sub .sub-link a').is(e.target)) {
+				$('.sub').removeClass('focus-menu');
+			};
+		}
+	);
+});

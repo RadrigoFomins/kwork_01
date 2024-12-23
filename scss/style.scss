@@ -1,10 +1,12 @@
 $font_size_default: 14;
 
 $color_text: #1d1d1d;
-$color_border: #b6b6b6;
-$color_link: #0b1c39;
-$color_link_hover: #2572ff;
+$color_link: #1d1d1d;
+$color_link_hover: #a3a3a3;
 
+
+$color_border: #b6b6b6;
+$color_gray_fon: #F6F6F6;
 $color_background_header: #404444;
 
 @function clm_rem($min, $width, $max) {
@@ -22,8 +24,6 @@ $color_background_header: #404444;
 }
 
 %max_wight {
-	padding-left: 4%;
-	padding-right: 4%;
 	> * {
 		width: 100%;
 		max-width: 1290px;
@@ -37,6 +37,7 @@ $color_background_header: #404444;
 @import "_other";
 @import "_menu";
 @import "_header";
+@import "_menu";
 @import "_main";
 @import "_footer";
 @import "_login";

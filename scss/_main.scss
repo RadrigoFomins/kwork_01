@@ -1,0 +1,66 @@
+.spring {
+	@extend %max_wight;
+	> div {
+		display: flex;
+		justify-content: center;
+		padding: clm_px(80, 900, 140) 0;
+		position: relative;
+		&::before,
+		&::after {
+			display: block;
+			content: "";
+			position: absolute;
+			top: 0;
+			height: 100%;
+			background-color: #13ed1c;
+			z-index: -1;
+			background-size: auto 100%;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+		}
+		&::after {
+			right: 0;
+			background-color: #fff500;
+			background-image: url(/images/png/05.png);
+		}
+		&::before {
+			left: 0;
+			background-color: #13ed1c;
+			background-image: url(/images/png/07.png);
+		}
+	}
+}
+.spring__box {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	padding: clm_px(40, 600, 80);
+	position: relative;
+	text-align: center;
+	p {
+		margin: 20px 0;
+		font-size: clm_rem(1, 600, 1.1);
+	}
+}
+@media (max-width: 719.98px) {
+	.spring {
+		> div {
+			&::after {
+				width: 100%;
+			}
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
+
+@media (min-width: 720px) {
+	.spring {
+		> div {
+			&::before,
+			&::after {
+				width: 50%;
+			}
+		}
+	}
+}

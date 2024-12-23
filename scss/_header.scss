@@ -1,6 +1,14 @@
-.header {
+.header__top-info {
+	text-transform: uppercase;
+	font-weight: 600;
+	text-align: center;
+	padding: 15px;
+	font-size: clm_rem(0.71, 900, 1);
+}
+.header__content {
 	background: $color_background_header;
 	@extend %max_wight;
+	padding: 0 4%;
 	> * {
 		display: flex;
 		align-items: center;
@@ -24,6 +32,10 @@
 	align-items: center;
 	justify-content: flex-end;
 	gap: 5px;
+	padding-left: 10px;
+}
+.header__right,
+.header__btn-mob {
 	button,
 	a {
 		display: flex;
@@ -36,5 +48,20 @@
 		display: block;
 		width: 24px;
 		height: 24px;
+	}
+}
+.header__btn-mob {
+	margin-right: 10px;
+}
+
+@media (max-width: 991.98px) {
+	.header__right .btn-search {
+		display: none;
+	}
+}
+
+@media (min-width: 992px) {
+	.header__btn-mob {
+		display: none;
 	}
 }

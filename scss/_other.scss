@@ -1,3 +1,6 @@
+.red {
+	color: red !important;
+}
 .title_hide {
 	left: -9999px;
 	position: absolute;
@@ -6,13 +9,6 @@
 	width: 0;
 	height: 0;
 }
-.top-info {
-	text-transform: uppercase;
-	font-weight: 600;
-	text-align: center;
-	padding: 15px;
-	font-size: clm_rem(0.71, 900, 1);
-}
 // Кнопки
 .btn {
 	border: 0 none;
@@ -20,6 +16,9 @@
 	overflow: hidden;
 	text-decoration: none !important;
 	background: transparent;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .btn-default,
 .btn-white {
@@ -34,6 +33,20 @@
 .btn-default {
 	background-color: $color_text;
 	color: #fff;
+	&.a-btn-default {
+		display: inline-flex;
+		align-items: center;
+		gap: 20px;
+		img {
+			display: block;
+			width: 25px;
+			height: 8px;
+		}
+		&:hover,
+		&:focus-visible {
+			color: #fff;
+		}
+	}
 }
 .btn-white {
 	background-color: #fff;
