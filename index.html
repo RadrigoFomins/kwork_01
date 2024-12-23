@@ -5,42 +5,61 @@
 	<title>Название</title>
 	<meta name="description" content="Описание">
 	<meta name="keywords" content="Ключевые слова">
-	
-   <meta name="format-detection" content="telephone=no">
-   <meta name="format-detection" content="address=no">
-   <meta name="HandheldFriendly" content="true">
-   <meta name="viewport" content="initial-scale=1.0, width=device-width">
-   <meta name="apple-mobile-web-app-capable" content="yes">
-   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=1">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="address=no">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=2">
 </head>
 <body>
-	<div class="top-info">Lorem ipsum is placeholder text commonly used -20%</div>
 	<header class="header">
-		<div>
-			<div class="header__logo">
-				<a href="/">
-					<img src="images/icons/logo_white.svg" alt="">
-				</a>
-			</div>
-			<div class="header__right">
-				<button type="button" class="btn">
-					<img src="images/icons/search_white.svg" alt="">
-				</button>
-				<button type="button" class="btn" data-toggle="modal" data-target="loginModal">
-					<img src="images/icons/user_white.svg" alt="">
-				</button>
-				<a href="#">
-					<img src="images/icons/heart_white.svg" alt="">
-				</a>
-				<a href="#">
-					<img src="images/icons/bag_white.svg" alt="">
-				</a>
+		<div class="header__top-info">Lorem ipsum is placeholder text commonly used -20%</div>
+		<div class="header__content">
+			<div>
+				<div class="header__btn-mob">
+					<button type="button" class="btn">
+						<img src="images/icons/menu_white.svg" alt="">
+					</button>
+				</div>
+				<div class="header__logo">
+					<a href="/">
+						<img src="images/icons/logo_white.svg" alt="">
+					</a>
+				</div>
+				<div class="header__right">
+					<button type="button" class="btn btn-search">
+						<img src="images/icons/search_white.svg" alt="">
+					</button>
+					<button type="button" class="btn" data-toggle="modal" data-target="loginModal">
+						<img src="images/icons/user_white.svg" alt="">
+					</button>
+					<a href="#">
+						<img src="images/icons/heart_white.svg" alt="">
+					</a>
+					<a href="#">
+						<img src="images/icons/bag_white.svg" alt="">
+					</a>
+				</div>
 			</div>
 		</div>
+		<nav class="menu-top">
+			<!--
+			Прописывается содержимое при помощи jquery из modules/menu-top.html
+			-->
+		</nav>
 	</header>
 	<main class="main">
+		<section class="spring">
+			<div>
+				<div class="spring__box">
+					<h2>Spring mood</h2>
+					<p>-20% на новую коллекцию.</p>
+					<a class="btn-default a-btn-default last" href="#"><span>Смотреть всё</span><img src="images\icons\rarr_white.svg" alt=""></a>
+				</div>
+			</div>
+		</section>
 		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	</main>
 	<footer class="footer">
@@ -48,7 +67,6 @@
 	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
-
 				<div class="login_tab_block">
 					<div class="tab-pane" id="login-reg" role="tabpanel" aria-labelledby="login-reg-tab">
 						<div class="modal-header">
@@ -71,7 +89,7 @@
 								<div><button class="btn btn-default" type="button" title="Войти">Зарегистрироваться</button></div>
 							</form>
 						</div>
-						</div>
+					</div>
 					<div class="tab-pane show" id="login-aut" role="tabpanel" aria-labelledby="login-aut-tab">
 						<div class="modal-header">
 							<h4 class="modal-title h2" id="loginModalLabel">Вход</h4>
@@ -95,7 +113,6 @@
 						</div>
 					</div>
 				</div>
-
 				<ul class="login_tab_button" role="tablist">
 					<li role="presentation">
 						<button id="login-reg-tab" class="btn btn-white" data-toggle="tab" type="button" role="tab" aria-controls="login-reg" aria-selected="false">Зарегистрироваться</button>
@@ -104,13 +121,17 @@
 						<button id="login-aut-tab" class="btn btn-white" data-toggle="tab" type="button" role="tab" aria-controls="login-aut" aria-selected="true">Войти</button>
 					</li>
 				</ul>
-
 				<button type="button" class="btn close" aria-label="Close">
 					<img src="images/icons/close_black.svg" alt="">
 				</button>
 			</div>
 		</div>
 		<script src="js/jquery-3.7.1.min.js"></script>
-		<script src="js/lib.js?v=1"></script>
+		<script>
+			$(function () {
+				$('.menu-top').load('modules/menu-top.html');
+			});
+		</script>
+		<script src="js/lib.js?v=2"></script>
 </body>
 </html>
