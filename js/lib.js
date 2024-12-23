@@ -144,3 +144,22 @@ $(document).ready(function () {
 		}
 	);
 });
+
+// Поиск
+$(document).ready(function () {
+	$('[data-toggle="fade"]').on('click', function () {
+		var $toggleButton = $(this);
+		var $toggleContent = $('#' + $toggleButton.attr('aria-controls'));
+
+		$toggleContent.toggleClass('show');
+
+		if ($toggleContent.hasClass('show')) {
+			$toggleButton.attr('aria-expanded', 'true');
+			$toggleContent.fadeIn(200);
+			$toggleContent.find('input[type="search"]').focus();
+		} else {
+			$toggleButton.attr('aria-expanded', 'false');
+			$toggleContent.fadeOut(200);
+		}
+	});
+});

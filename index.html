@@ -11,7 +11,6 @@
 	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
-
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.min.css?v=5">
 </head>
@@ -31,8 +30,9 @@
 					</a>
 				</div>
 				<div class="header__right">
-					<button type="button" class="btn btn-search">
-						<img src="images/icons/search_white.svg" alt="">
+					<button type="button" class="btn btn-search" data-toggle="fade" aria-expanded="false" aria-controls="search">
+						<img class="on" src="images/icons/search_white.svg" alt="">
+						<img class="off" src="images/icons/close_white.svg" alt="">
 					</button>
 					<button type="button" class="btn" data-toggle="modal" data-target="loginModal">
 						<img src="images/icons/user_white.svg" alt="">
@@ -43,6 +43,12 @@
 					<a href="#">
 						<img src="images/icons/bag_white.svg" alt="">
 					</a>
+				</div>
+				<div class="header-search" id="search">
+					<form method="post">
+						<input type="search" name="search">
+						<button class="btn" type="button"><img src="images/icons/search_black.svg" alt=""></button>
+					</form>
 				</div>
 			</div>
 		</div>
@@ -130,12 +136,13 @@
 				</button>
 			</div>
 		</div>
-		<script src="js/jquery-3.7.1.min.js"></script>
-		<script>
-			$(function () {
-				$('.menu-top').load('modules/menu-top.html');
-			});
-		</script>
-		<script src="js/lib.js?v=2"></script>
+	</div>
+	<script src="js/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function () {
+			$('.menu-top').load('modules/menu-top.html');
+		});
+	</script>
+	<script src="js/lib.js?v=2"></script>
 </body>
 </html>
