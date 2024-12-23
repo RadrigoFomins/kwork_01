@@ -760,27 +760,34 @@ input[type=tel] {
   padding: clamp(80px, 15.55556vw, 140px) 0;
   position: relative;
 }
-.spring > div::before, .spring > div::after {
-  display: block;
-  content: "";
+
+.spring__left,
+.spring__right {
   position: absolute;
   top: 0;
   height: 100%;
-  background-color: #13ed1c;
   z-index: -1;
-  background-size: auto 100%;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
 }
-.spring > div::after {
-  right: 0;
-  background-color: #fff500;
-  background-image: url(/images/png/05.png);
+.spring__left img,
+.spring__right img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  overflow: hidden;
 }
-.spring > div::before {
+
+.spring__left {
   left: 0;
   background-color: #13ed1c;
-  background-image: url(/images/png/07.png);
+}
+
+.spring__right {
+  right: 0;
+  background-color: #fff500;
 }
 
 .spring__box {
@@ -796,15 +803,16 @@ input[type=tel] {
 }
 
 @media (max-width: 719.98px) {
-  .spring > div::after {
-    width: 100%;
-  }
-  .spring > div::before {
+  .spring__left {
     display: none;
+  }
+  .spring__right {
+    width: 100%;
   }
 }
 @media (min-width: 720px) {
-  .spring > div::before, .spring > div::after {
+  .spring__left,
+  .spring__right {
     width: 50%;
   }
 }
