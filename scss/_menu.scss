@@ -1,4 +1,6 @@
 .menu-top {
+	position: relative;
+	z-index: 3;
 	@extend %max_wight;
 	> div {
 		display: flex;
