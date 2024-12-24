@@ -4,9 +4,9 @@ $color_text: #1d1d1d;
 $color_link: #1d1d1d;
 $color_link_hover: #a3a3a3;
 
-
 $color_border: #b6b6b6;
-$color_gray_fon: #F6F6F6;
+$color_gray_fon: #f6f6f6;
+$color_gray_fon_2: #f1f1f1;
 $color_background_header: #404444;
 
 @function clm_rem($min, $width, $max) {
@@ -38,6 +38,14 @@ $color_background_header: #404444;
 @import "_menu";
 @import "_header";
 @import "_menu";
+// OWL Carousel
+@import "owl/_core";
+@import "owl/_animate";
+@import "owl/_autoheight";
+@import "owl/_lazyload";
+// @import "owl/_video";
+@import "owl/_theme.default";
+// OWL Carousel
 @import "_main";
 @import "_footer";
 @import "_login";
